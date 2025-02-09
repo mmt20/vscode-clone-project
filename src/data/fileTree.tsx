@@ -1,34 +1,41 @@
 import { IFile } from "../interfaces";
+import { nanoid } from "nanoid";
 
 export const fileTree: IFile = {
+  id: nanoid(),
   name: "VS Code Clone",
   isFolder: true,
   children: [
     {
+      id: nanoid(),
       name: "node_modules",
       isFolder: true,
       children: [
         {
+          id: nanoid(),
           name: ".vite",
           isFolder: true,
-          children: [{ name: "react.js", isFolder: false }],
+          children: [{ id: nanoid(), name: "react.js", isFolder: false }],
         },
       ],
     },
-    { name: "index.html", isFolder: false },
+    { id: nanoid(), name: "index.html", isFolder: false },
     {
+      id: nanoid(),
       name: "public",
       isFolder: true,
-      children: [{ name: "index.html", isFolder: false }],
+      children: [{ id: nanoid(), name: "index.html", isFolder: false }],
     },
     {
+      id: nanoid(),
       name: "src",
       isFolder: true,
       children: [
         {
+          id: nanoid(),
           name: "components",
           isFolder: true,
-          children: [{ name: "Button.tsx", isFolder: false }],
+          children: [{ id: nanoid(), name: "Button.tsx", isFolder: false }],
         },
       ],
     },

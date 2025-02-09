@@ -12,7 +12,7 @@ interface IProps {
 const RecursiveComponent = ({
   fileTree: { name, isFolder, children },
 }: IProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   // ** Handlers
   const Toggle = () => setIsOpen((prev) => !prev);
   return (

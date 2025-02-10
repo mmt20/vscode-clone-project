@@ -3,15 +3,15 @@ import { IFile } from "../../interfaces";
 
 interface IClickedFile {
   filename: string;
-  fileContnet: string;
+  fileContnet: string | undefined;
 }
 interface IInitialState {
   opendFiles: IFile[];
-  clickedFIle: IClickedFile;
+  clickedFile: IClickedFile;
 }
 const initialState: IInitialState = {
   opendFiles: [],
-  clickedFIle: {
+  clickedFile: {
     filename: "",
     fileContnet: "",
   },
@@ -21,12 +21,17 @@ export const fileTreeSlice = createSlice({
   name: "fileTree",
   initialState,
   reducers: {
-    setOPendFiles: (state, action: PayloadAction<IFile[]>) => {
+    setOPendFilesAction: (state, action: PayloadAction<IFile[]>) => {
       state.opendFiles = action.payload;
+    },
+    setClickedFileAction: (state, action: PayloadAction<IClickedFile>) => {
+      state.clickedFile.filename = action.payload.filename;
+      state.clickedFile.fileContnet = action.payload.fileContnet;
     },
   },
 });
 
-export const { setOPendFiles } = fileTreeSlice.actions;
+export const { setOPendFilesAction, setClickedFileAction } =
+  fileTreeSlice.actions;
 
 export default fileTreeSlice.reducer;

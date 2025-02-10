@@ -35,7 +35,15 @@ export const fileTree: IFile = {
           id: nanoid(),
           name: "components",
           isFolder: true,
-          children: [{ id: nanoid(), name: "Button.tsx", isFolder: false }],
+          children: [
+            {
+              id: nanoid(),
+              name: "Button.tsx",
+              isFolder: false,
+              content:
+                "import React from 'react';\n\nconst Button = () => {\n  return <button>Click me</button>;\n};\n\nexport default Button;",
+            },
+          ],
         },
       ],
     },

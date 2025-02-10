@@ -1,18 +1,17 @@
-import { useSelector } from "react-redux";
 import RecursiveComponent from "./components/RecursiveComponent";
 import { fileTree } from "./data/fileTree";
-import { RootState } from "./app/store";
+import OpenedFileBar from "./components/OpenedFileBar";
 
 function App() {
-  const { opendFiles } = useSelector((state: RootState) => state.tree);
   return (
-    <div className="my-5">
-      <RecursiveComponent fileTree={fileTree} />
-      <ul>
-        {opendFiles.map((file, idx) => (
-          <li key={idx}>{file.name}</li>
-        ))}
-      </ul>
+    <div>
+      <div className="flex h-screen">
+        <div className="w-64 border-r border-white border-opacity-10">
+          <RecursiveComponent fileTree={fileTree} />
+        </div>
+
+        <OpenedFileBar />
+      </div>
     </div>
   );
 }

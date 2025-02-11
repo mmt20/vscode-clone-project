@@ -4,7 +4,7 @@ import { IFile } from "../../interfaces";
 interface IClickedFile {
   activeTabId: string | null;
   filename: string;
-  fileContnet: string | undefined;
+  fileContent: string | undefined;
 }
 interface IInitialState {
   opendFiles: IFile[];
@@ -15,7 +15,7 @@ const initialState: IInitialState = {
   clickedFile: {
     activeTabId: null,
     filename: "",
-    fileContnet: "",
+    fileContent: "",
   },
 };
 

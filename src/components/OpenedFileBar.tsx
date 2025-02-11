@@ -16,7 +16,7 @@ const OpenedFileBar = () => {
           <OpenedFileBarTab key={file.id} file={file} />
         ))}
       </div>
-      <FileSyntaxHighlighter content={`${clickedFile.fileContnet}`} />
+      <FileSyntaxHighlighter content={clickedFile.fileContent} />
     </div>
   );
 };

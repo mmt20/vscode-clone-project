@@ -1,9 +1,13 @@
 import RecursiveComponent from "./components/RecursiveComponent";
 import { fileTree } from "./data/fileTree";
-import OpenedFileBar from "./components/OpenedFileBar";
 import ResizeablePanel from "./components/ResizeablePanel";
+import Preview from "./components/Preview";
+import { RootState } from "./app/store";
+import { useSelector } from "react-redux";
+import WelcomeTab from "./components/WelcomeTab";
 
 function App() {
+  const { opendFiles } = useSelector(({ tree }: RootState) => tree);
   return (
     <div>
       <div className="flex h-screen">
@@ -14,7 +18,7 @@ function App() {
               <RecursiveComponent fileTree={fileTree} />
             </div>
           }
-          rightPanel={<OpenedFileBar />}
+          rightPanel={opendFiles.length ? <Preview /> : <WelcomeTab />}
         />
       </div>
     </div>

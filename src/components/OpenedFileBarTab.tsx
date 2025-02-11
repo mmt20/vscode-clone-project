@@ -25,7 +25,7 @@ const OpenedFileBarTab = ({ file }: IProps) => {
     dispatch(
       setClickedFileAction({
         filename: name,
-        fileContnet: content,
+        fileContent: content,
         activeTabId: id,
       })
     );
@@ -39,7 +39,7 @@ const OpenedFileBarTab = ({ file }: IProps) => {
         setClickedFileAction({
           activeTabId: null,
           filename: "",
-          fileContnet: "",
+          fileContent: "",
         })
       );
       dispatch(setOPendFilesAction([]));
@@ -52,7 +52,7 @@ const OpenedFileBarTab = ({ file }: IProps) => {
       setClickedFileAction({
         activeTabId: lastFile.id,
         filename: lastFile.name,
-        fileContnet: lastFile.content,
+        fileContent: lastFile.content,
       })
     );
 

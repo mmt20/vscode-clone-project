@@ -29,7 +29,7 @@ const RecursiveComponent = ({ fileTree }: IProps) => {
     dispatch(
       setClickedFileAction({
         filename: name,
-        fileContnet: content,
+        fileContent: content,
         activeTabId: id,
       })
     );

@@ -7,6 +7,8 @@ import {
   setOPendFilesAction,
 } from "../app/features/fileTreeSlice";
 import { RootState } from "../app/store";
+import { useState } from "react";
+import DropMenu from "./ui/DropMenu";
 
 interface IProps {
   file: IFile;
@@ -14,7 +16,11 @@ interface IProps {
 
 const OpenedFileBarTab = ({ file }: IProps) => {
   const dispatch = useDispatch();
-
+  const [showMenu, setShowMenu] = useState(false);
+  const [menuPostion, setMenuPostion] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
   const {
     opendFiles,
     clickedFile: { activeTabId },
@@ -65,6 +71,11 @@ const OpenedFileBarTab = ({ file }: IProps) => {
         file.id === activeTabId ? "border-[#cf6ccf]" : "border-transparent"
       }`}
       onClick={onClick}
+      onContextMenu={(e) => {
+        e.preventDefault();
+        setMenuPostion({ x: e.clientX, y: e.clientY });
+        setShowMenu(true);
+      }}
     >
       <RenderFileIcon filename={file.name} />
 
@@ -80,6 +91,7 @@ const OpenedFileBarTab = ({ file }: IProps) => {
       >
         <CloseIcon />
       </span>
+      {showMenu && <DropMenu postions={menuPostion} />}
     </div>
   );
 };

@@ -15,9 +15,9 @@ const FileSyntaxHighlighter = ({ content }: IProps) => {
       customStyle={{
         backgroundColor: "transparent",
         width: "100%",
-        maxHeight: "100vh",
+        maxHeight: "100h",
         overflowX: "auto",
-        fontSize: "1.5rem",
+        fontSize: "1.4rem",
       }}
     >
       {String(content)}

@@ -5,6 +5,7 @@ import RenderFileIcon from "./SVG/RenderFileIcon";
 import {
   setClickedFileAction,
   setOPendFilesAction,
+  setTabIdtoRemoveAction,
 } from "../app/features/fileTreeSlice";
 import { RootState } from "../app/store";
 
@@ -69,6 +70,7 @@ const OpenedFileBarTab = ({ file }: IProps) => {
       onClick={onClick}
       onContextMenu={(e) => {
         e.preventDefault();
+        dispatch(setTabIdtoRemoveAction(file.id));
       }}
     >
       <RenderFileIcon filename={file.name} />

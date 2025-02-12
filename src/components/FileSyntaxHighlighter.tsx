@@ -10,14 +10,15 @@ const FileSyntaxHighlighter = ({ content }: IProps) => {
     <SyntaxHighlighter
       language="javascript"
       style={atomOneDark}
-      showLineNumbers
       showInlineLineNumbers
+      showLineNumbers
       customStyle={{
         backgroundColor: "transparent",
         width: "100%",
-        maxHeight: "100h",
+        maxHeight: "100vh",
         overflowX: "auto",
-        fontSize: "1.4rem",
+        overflowY: "auto",
+        fontSize: "1.5rem",
       }}
     >
       {String(content)}

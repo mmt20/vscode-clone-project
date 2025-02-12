@@ -2,7 +2,7 @@ interface IProps {
   postions: { x: number; y: number };
 }
 
-const DropMenu = ({ postions }: IProps) => {
+const ContextMenu = ({ postions }: IProps) => {
   return (
     <ul
       className=" bg-white border border-gray-300 rounded-md shadow-lg py-1 w-32 text-black px-7"
@@ -14,4 +14,4 @@ const DropMenu = ({ postions }: IProps) => {
   );
 };
 
-export default DropMenu;
+export default ContextMenu;

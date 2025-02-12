@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# VS Code Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A powerful, lightweight code editor inspired by Visual Studio Code. Built with React, Redux Toolkit, and modern web technologies.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:** React, TypeScript
+- **State Management:** Redux Toolkit
+- **Styling:** Tailwind CSS
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **File Explorer**: Recursive file tree with toggle support
+- **Tabs System**: Open, close, and manage multiple files
+- **Syntax Highlighting**: Code highlighting for various languages
+- **Resizable Panels**: Adjustable layout for better usability
+- **Custom Context Menu**: Advanced right-click actions
+- **State Management**: Powered by Redux Toolkit
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/mmt20/vscode-clone-project.git
+   cd vscode-clone-project
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```sh
+   npm run dev
+   ```
+
+## Folder Structure
+
+```sh
+
+/src
+ ├── app/
+ │ ├── features/ # Redux slices and state management
+ │ ├── store.ts # Main Redux store configuration
+ │
+ ├── assets/ # Static assets (icons, images, etc.)
+ │
+ ├── components/
+ │ ├── styles/ # Global and component-specific styles
+ │ ├── SVG/ # SVG icons and vector graphics
+ │ ├── ui/ # UI components
+ │ │ ├── ContextMenu.tsx
+ │ ├──FileSyntaxHighlighter.tsx
+ │ ├──IconImg.tsx
+ │ ├──OpenedFileBar.tsx
+ │ ├──OpenedFilesBarTab.tsx
+ │ ├──Preview.tsx
+ │ ├──RecursiveComponent.tsx
+ │ ├──ResizablePanel.tsx
+ │ ├──WelcomeTab.tsx
+ │
+ ├── constant/ # Constant values and configurations
+ ├── data/ #  fileTree data
+ ├── interfaces/ # TypeScript interfaces and types
+ │
+ ├── utils/ # Helper functions and utilities
+ │
+ ├── App.tsx # Main application component
+ ├── index.css # Global styles
+ ├── main.tsx # React app entry point
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Contact
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Mostafa Mohamed - [@MMTAHA22](https://x.com/MMTAHA22) - mmt202002@gmail.com

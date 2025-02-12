@@ -2,7 +2,11 @@
 
 A powerful, lightweight code editor inspired by Visual Studio Code. Built with React, Redux Toolkit, and modern web technologies.
 
-## 🚀 Tech Stack
+## Preview
+
+[**Live Demo**](https://vscode-clone-phi.vercel.app/)
+
+## Tech Stack
 
 - **Frontend:** React, TypeScript
 - **State Management:** Redux Toolkit
